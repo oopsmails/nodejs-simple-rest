@@ -8,5 +8,5 @@ app.listen(port, () => {
 });
 
 app.get("/api", (req, res, next) => {
-    res.json(["Tony", "Lisa", "Michael", "Ginger", "Food", "ChangedTo-v2"]);
+    res.json(["Apple", "Banana", "Cherry", "Dewberry", "Grape", "ChangingVersion-v1"]);
 });
