@@ -1,10 +1,32 @@
 
 # This is a simple nodejs restful api application to try Kubernates on local
 
+## 20211217:
+
+### Build images with bash
+```
+SRC_FOLDER=/home/albert/Documents/sharing/github/nodejs-simple-rest
+
+docker build --rm -f $SRC_FOLDER/Dockerfile -t oopsmails/nodejs-simple-rest:v1 $SRC_FOLDER
+```
+
+### Run with docker
+
+- Dockerfile with bash installed
+- Try volume, need to create */dockerv* on local first, if *touch text.txt* in */nodejsapp* in container, then will see it in */dockerv/nodejs-simple-rest* on local.
+- Try 2000 on local instead of 3000
+- Try /bin/bash, 
+
+docker run -it --rm -v /dockerv/nodejs-simple-rest:/nodejsapp -p 2000:3000 oopsmails/nodejs-simple-rest:v1 /bin/bash
+
+
+
+
+## old commands:
+
 docker build --rm -f nodejs-simple-rest/Dockerfile -t nodejs-simple-rest:v2 nodejs-simple-rest
 
 docker tag nodejs-simple-rest:v2 oopsmails/nodejs-simple-rest:v2
-
 
 
 docker build --rm -f nodejs-simple-rest/Dockerfile-v3-volume -t nodejs-simple-rest:v3 nodejs-simple-rest
